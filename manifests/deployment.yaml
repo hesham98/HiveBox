@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hivebox
+  namespace: hivebox
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 5000
+  selector:
+    app: hivebox
+[root@master02 ~]# cat deployment.yaml
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: hivebox
+  namespace: hivebox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hivebox
+  template:
+    metadata:
+      labels:
+        app: hivebox
+    spec:
+      containers:
+        - name: hivebox
+          image: hesham989/hivebox:5
+          ports:
+          - containerPort: 5000
