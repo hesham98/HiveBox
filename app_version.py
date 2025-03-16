@@ -3,5 +3,5 @@
 VERSION = "0.0.1"
 
 def app_version():
-    """Function printing the application version"""
+    """Function return defined application version from VERSION var"""
     return VERSION

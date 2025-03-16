@@ -1,5 +1,6 @@
 """import flask from Flask class and app_version function from app_version module"""
 from flask import Flask
+from markupsafe import escape
 from app_version import app_version
 
 app = Flask(__name__)
@@ -9,4 +10,4 @@ app = Flask(__name__)
 def get_app_version():
     """call app_version() from app_version module this fuction prints the application version"""
     version = app_version()
-    return f"<p>Version: {version}</p>"
+    return f"Version: {escape(version)}"
