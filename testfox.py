@@ -1,6 +1,8 @@
 import requests
 from datetime import datetime, timezone 
 
+senseBox_ID: [5eba5fbad46fb8001b799786, 5c21ff8f919bf8001adf2488, 5ade1acf223bd80019a1011c]
+
 timestamp = datetime.fromisoformat("YYYY-MM-DDTHH:MM:SS.sssssssss")
 print (timestamp)
 respond = requests.get("https://api.opensensemap.org/boxes?date=:date&phenomenon=:phenomenon&format=:format")

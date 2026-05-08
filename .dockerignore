@@ -1,8 +1,19 @@
-#Ignore READ ME
 README.md
-
-#Ignore Dockerfile
 Dockerfile
+.dockerignore
+.gitignore
 
-#Ignore venv
+# virtual environments
 venv
+.venv
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+
+# Kubernetes manifests
+manifests/
+
+# tests
+testfox.py
